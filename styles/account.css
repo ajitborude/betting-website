@@ -1,0 +1,36 @@
+.heading {
+  font-family: "Days One", sans-serif;
+  color: white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.change-password-label {
+  animation: typing 0.8s steps(15, end) 1s 1 normal both;
+  animation-delay: 0.8s;
+  text-shadow: 3px 3px rgba(255, 255, 255, 0.2);
+  @apply whitespace-nowrap overflow-hidden tracking-widest heading mb-2 pointer-events-auto cursor-pointer opacity-100;
+}
+
+.my-account-label {
+  animation: typing 1s steps(10, end) 1s 1 normal both;
+  animation-delay: 0s;
+  @apply w-full !text-4xl whitespace-nowrap overflow-hidden tracking-widest heading mr-5;
+}
+
+.my-account-sub-label {
+  animation: typing 1s steps(10, end) 1s 1 normal both;
+  animation-delay: 0s;
+  @apply w-full heading text-xl !text-title-500 whitespace-nowrap overflow-hidden tracking-widest heading mr-5;
+}
+
+.select-label {
+  animation: typing 0.8s steps(10, end) 1s 1 normal both;
+  animation-delay: 0s;
+  @apply text-sm cursor-pointer whitespace-nowrap overflow-hidden tracking-widest heading;
+}
+
+.referral-label {
+  animation: typing 1s steps(10, end) 1s 1 normal both;
+  @apply w-full whitespace-nowrap overflow-hidden tracking-widest heading mr-5;
+}

@@ -1,0 +1,1747 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700;800&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global font for text */
+@font-face {
+  font-family: "Calibri";
+  src: url("/fonts/calibri.ttf");
+  src: url("/fonts/calibrib.ttf");
+  src: url("/fonts/calibril.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Font for headings */
+@font-face {
+  font-family: "Days One";
+  src: url("/fonts/days-one.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* SVG Font for custom password dots */
+@font-face {
+  font-family: "fontello";
+  src: url("/fonts/fontello.eot?2022");
+  src: url("/fonts/fontello.eot?2022#iefix") format("embedded-opentype"),
+    url("/fonts/fontello.woff2?2022") format("woff2"),
+    url("/fonts/fontello.woff?2022") format("woff"),
+    url("/fonts/fontello.ttf?2022") format("truetype"),
+    url("/fonts/fontello.svg?2022#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  html {
+    font-family: "Calibri", sans-serif;
+    color: white !important;
+    letter-spacing: 0.02em;
+    line-height: 20px;
+    font-weight: 400;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-image: url("/common/scrollbar-1.png"),
+    url("/common/scrollbar-2.png"), url("/common/scroll-3.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: top, center, bottom;
+  background-size: 100% 20%, 100% 60%, 100% 20%;
+}
+
+.heading {
+  font-family: "Days One", sans-serif;
+  color: white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-family: "Bai Jamjuree", sans-serif;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.logo-div {
+  background-color: #202a39;
+  border-radius: 10px;
+  transform: skewY(-3deg) skewX(-17deg);
+  padding: 65px 25px 16px 66px;
+  margin: -30px 0 -30px -65px;
+}
+
+.label-shadow {
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+}
+
+.custom-table {
+}
+
+.table-row-shadow {
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.3);
+}
+
+.left-shadow {
+  box-shadow: -2px 0px 2px rgba(255, 255, 255, 0.2);
+}
+
+.row-shadow {
+  box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.4);
+}
+
+.account-tab {
+  background-image: url("/tab-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: border-box;
+  background-size: cover;
+}
+
+.account-tab-active {
+  background-image: url("/tab-bg-active.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: border-box;
+  background-size: cover;
+}
+
+.table-wrapper {
+  @apply flex w-full overflow-x-auto scroll-smooth lg:items-center lg:justify-center;
+}
+
+.table-custom {
+  @apply w-[98%] text-sm text-left;
+  border-spacing: 0px 10px !important;
+  border-collapse: separate !important;
+}
+
+.table-head {
+  background-image: url("/account/table-header.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @apply text-sm capitalize;
+}
+
+.table-tr {
+  background-image: url("/account/table-row.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @apply relative overflow-x-auto;
+}
+
+.table-td {
+  @apply px-3 py-3 text-sm font-thin;
+}
+
+.table-expand {
+  @apply absolute top-0 left-0 flex items-center justify-start w-full p-0 bg-transparent md:hidden h-full;
+}
+
+.table-expand-btn {
+  @apply sticky left-[68vw] sm:left-[61vw]  sms:left-[77vw] top-0 !min-h-full h-full p-4 bg-primary-500 cursor-pointer rounded-none btn border-0 hover:bg-primary-500;
+}
+
+.table-sub-tr {
+  @apply w-[81vw] sm:w-[69vw] sms:w-[85vw] flex items-center justify-center  bg-[#4A4A4A] -mt-3;
+}
+
+.table-sub-td {
+  @apply w-full !p-0 bg-[#4F4F4F];
+}
+
+.table-sub-row-data {
+  @apply flex flex-row items-center justify-between w-full p-2 my-2 bg-[#4A4A4A] row-shadow;
+}
+
+.game-history-share-btn {
+  @apply w-11 h-11 border-0 min-h-8 btn btn-circle btn-ghost mx-1;
+}
+
+.footer-wrapper {
+  background-image: url("/common/footer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @apply flex items-center justify-center w-screen;
+}
+
+.footer-main {
+  @apply w-full bg-transparent flex flex-row;
+}
+
+.footer-header {
+  @apply mb-3 heading !text-[#F0DC7A];
+}
+
+.footer-link {
+  @apply link link-hover text-special-500 font-semibold py-1 text-sm;
+}
+
+.footer-social {
+  @apply relative flex items-center justify-center w-20 h-20 btn btn-circle btn-ghost mx-1;
+}
+
+.footer-warning-frame {
+  background-image: url("/common/footer-sub-frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.referral-hex-small {
+  @apply w-36 h-36 lg:w-40 lg:h-40 2xl:w-56 2xl:h-56;
+}
+
+.referral-hex-big {
+  @apply w-60 h-60 md:w-[17rem] md:h-[17rem] lg:w-72 lg:h-72 2xl:w-96 2xl:h-96;
+}
+
+.referral-hex-main-border {
+  @apply w-[95%] h-auto;
+}
+
+.referral-hex-text-container {
+  @apply absolute flex-col flex items-center justify-center w-[60%] h-[65%];
+}
+
+.referral-hex-text-1 {
+  @apply 2xl:text-lg text-center text-sm;
+}
+
+.referral-hex-text-2 {
+  @apply mb-2 2xl:text-xl xl:text-lg font-semibold text-center;
+}
+
+.referral-hex-text-3 {
+  @apply 2xl:my-4 my-2 font-bold text-center xl:text-6xl text-4xl;
+}
+
+.referral-hex-text-4 {
+  @apply mt-2 2xl:text-sm text-xs text-center;
+}
+
+.cashback-hex-title {
+  @apply heading !text-title-500 text-xl truncate;
+}
+.cashback-hex-text {
+  @apply 2xl:text-sm text-xs text-center;
+}
+
+.login-v2-frame {
+  background-image: url("/login/frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.login-v2-email {
+  /* background-image: url("/login/primary-input.png"); */
+  background-image: url("/login-v2-input-neutral.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.login-v2-login-btn {
+  background-image: url("/login-v2-login-btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.login-v2-social-btn {
+  background-image: url("/login-v2-social-btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.login-v2-strip {
+  background-image: url("/login-v2-bg-strip.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.account-strip {
+  background-image: url("/account/account-strip.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.typing-label-social-btn {
+  animation: typing 0.5s steps(5), blink 0.5s step-end infinite alternate;
+  animation-delay: 1.4s;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 0.1em;
+  @apply uppercase w-full;
+}
+
+.typing-header-connect-to-wallet {
+  animation: typing 0.4s steps(17, end) 1s 1 normal both;
+  animation-delay: 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 0.1em;
+}
+
+.typing-save-changes {
+  animation: typing 1s steps(13, end) 1s 1 normal both;
+  animation-delay: 0.5s;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 0.1em;
+}
+
+.typing-change-password {
+  animation: typing 1s steps(16, end) 1s 1 normal both;
+  animation-delay: 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 0.1em;
+  text-shadow: 3px 3px rgba(255, 255, 255, 0.2);
+  @apply p-2;
+}
+
+.otp-digit-animation {
+  animation: otp 0.8s ease 0s 1 normal forwards;
+  nimation-delay: 0.4s;
+}
+
+@keyframes otp {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+    opacity: 0.5;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* For custom dots in password input */
+
+input[type="password"] {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  color: #77eded;
+
+  font-variant: normal;
+  text-transform: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  letter-spacing: 2px;
+}
+
+/*
+@font-face {
+  font-family: "fontello";
+  src: url("/fonts/password.eot?2022");
+  src: url("/fonts/password.eot?2022#iefix") format("embedded-opentype"),
+    url("/fonts/password.woff2?2022") format("woff2"),
+    url("/fonts/password.woff?2022") format("woff"),
+    url("/fonts/password.ttf?2022") format("truetype"),
+    url("/fonts/password.svg?2022#password") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+input[type="password"] {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  color: #77eded;
+
+  font-variant: normal;
+  text-transform: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  letter-spacing: 2px;
+}
+*/
+
+/* For custom dots in password input */
+
+/* TOPBAR */
+
+.header-bg {
+  background-image: url("/common/header.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.drawer-btn-bg {
+  background-image: url("/header/drawer-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80% 80%;
+}
+
+.connect-wallet-bg {
+  background-image: url("/header/wallet-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.popup-bg {
+  background-image: url("/header/header-menu-frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.menu-btn-bg {
+  background-image: url("/header/menu-btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.red-btn-bg {
+  background-image: url("/header/sign-out-btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+/* ACCOUNT */
+
+.account-btn-bg {
+  background-image: url("/account/change-password.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.account-tab-even-active {
+  background-image: url("/account/even-active.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @apply w-[29%] rounded-none absolute -bottom-4 py-5 cursor-pointer;
+}
+
+.account-tab-even-inactive {
+  background-image: url("/account/even-inactive.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @apply w-[29%] rounded-none absolute -bottom-4 py-5 cursor-pointer;
+}
+
+.account-tab-odd-active {
+  background-image: url("/account/odd-active.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @apply w-[29%] rounded-none absolute -bottom-4 py-5 cursor-pointer;
+}
+
+.account-tab-odd-inactive {
+  background-image: url("/account/odd-inactive.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @apply w-[29%] rounded-none absolute -bottom-4 py-5 cursor-pointer;
+}
+
+.account-tab-first-active {
+  background-image: url("/account/first-corner.png"),
+    url("/account/odd-active.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right center;
+  background-size: 21% 100%, 96% 100%;
+  @apply w-[29%] rounded-none absolute -bottom-4 py-5 cursor-pointer;
+}
+
+.account-tab-first-inactive {
+  background-image: url("/account/first-corner.png"),
+    url("/account/odd-inactive.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right center;
+  background-size: 21% 100%, 96% 100%;
+  @apply w-[29%] rounded-none absolute -bottom-4 py-5 cursor-pointer;
+}
+
+.account-tab-last-active {
+  background-image: url("/account/last-corner.png"),
+    url("/account/even-active.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right top, left center;
+  background-size: 21% 100%, 96% 100%;
+  @apply w-[29%] rounded-none absolute -bottom-4 py-5 cursor-pointer;
+}
+
+.account-tab-last-inactive {
+  background-image: url("/account/last-corner.png"),
+    url("/account/even-inactive.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right bottom, left center;
+  background-size: 21% 100%, 96% 100%;
+  @apply w-[29%] rounded-none absolute -bottom-4 py-5 cursor-pointer;
+}
+
+.account-tab-label-active {
+  animation: typing 1s steps(15, end) 1s 1 normal both;
+  animation-delay: 0s;
+  @apply font-medium leading-5 !text-[#293079] uppercase truncate cursor-pointer heading text-sm whitespace-nowrap overflow-hidden;
+}
+
+.account-tab-label-inactive {
+  animation: typing 1s steps(15, end) 1s 1 normal both;
+  animation-delay: 0s;
+  @apply font-medium leading-5 !text-[#d4fdf6] uppercase truncate cursor-pointer heading text-sm whitespace-nowrap overflow-hidden;
+}
+
+.logout-bg {
+  background-image: url("/account/logout-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @apply px-8;
+}
+
+.pixen-toggle {
+  /* box-shadow: calc(0.75rem * -1) 0 0 2px hsl(0 0% 26%;) inset,0 0 0 2px hsl(0 0% 26%;) inset; */
+  box-shadow: calc(var(--handleoffset) * -1) 0 0 2px hsl(var(--b1)) inset,
+    0 0 0 2px hsl(var(--b1)) inset;
+  @apply bg-green-500 toggle toggle-sm border-2 border-white;
+}
+
+/* MODALS */
+
+.two-factor-bg {
+  background-image: url("/account/2-factor-auth-frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.two-factor-strip {
+  background-image: url("/account/2-factor-auth-strip.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.two-factor-digit {
+  background-image: url("/account/digit.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.two-factor-verify {
+  background-image: url("/account/verify.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.change-password-frame {
+  background-image: url("/account/change-password-frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.edit-username-frame {
+  background-image: url("/account/edit-username-frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+/* Primary Button Start */
+
+.btn-primary-left-bg {
+  background-image: url("/common/btn-primary-l.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+}
+
+.btn-primary-center-bg {
+  background-image: url("/common/btn-primary-c.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.btn-primary-right-bg {
+  background-image: url("/common/btn-primary-r.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 100% 100%;
+}
+
+@layer utilities {
+  .btn-primary-left-bg-hover {
+    background-image: url("/common/btn-primary-hover-l.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+  }
+
+  .btn-primary-center-bg-hover {
+    background-image: url("/common/btn-primary-hover-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-primary-right-bg-hover {
+    background-image: url("/common/btn-primary-hover-r.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
+  }
+
+  .btn-primary-left-bg-inactive {
+    background-image: url("/common/btn-primary-inactive-l.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+  }
+
+  .btn-primary-center-bg-inactive {
+    background-image: url("/common/btn-primary-inactive-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-primary-right-bg-inactive {
+    background-image: url("/common/btn-primary-inactive-r.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
+  }
+
+  .btn-primary-left-bg-active {
+    background-image: url("/common/btn-primary-active-l.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+  }
+
+  .btn-primary-center-bg-active {
+    background-image: url("/common/btn-primary-active-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-primary-right-bg-active {
+    background-image: url("/common/btn-primary-active-r.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
+  }
+}
+
+/* Primary Button End */
+
+/* Secondary Button Start */
+
+.btn-secondary-left-bg {
+  background-image: url("/common/btn-secondary-l.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.btn-secondary-center-bg {
+  background-image: url("/common/btn-secondary-c.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.btn-secondary-right-bg {
+  background-image: url("/common/btn-secondary-r.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+@layer utilities {
+  .btn-secondary-left-bg-hover {
+    background-image: url("/common/btn-secondary-hover-l.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  .btn-secondary-center-bg-hover {
+    background-image: url("/common/btn-secondary-hover-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-secondary-right-bg-hover {
+    background-image: url("/common/btn-secondary-hover-r.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  .btn-secondary-left-bg-inactive {
+    background-image: url("/common/btn-secondary-inactive-l.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  .btn-secondary-center-bg-inactive {
+    background-image: url("/common/btn-secondary-inactive-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-secondary-right-bg-inactive {
+    background-image: url("/common/btn-secondary-inactive-r.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  .btn-secondary-left-bg-active {
+    background-image: url("/common/btn-secondary-active-l.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  .btn-secondary-center-bg-active {
+    background-image: url("/common/btn-secondary-active-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-secondary-right-bg-active {
+    background-image: url("/common/btn-secondary-active-r.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+}
+
+/* Secondary Button End */
+
+/* Connect Wallet Button Start */
+
+.btn-connect-wallet-left-bg {
+  background-image: url("/common/connect-wallet-l.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+}
+
+.btn-connect-wallet-center-bg {
+  background-image: url("/common/connect-wallet-c.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.btn-connect-wallet-right-bg {
+  background-image: url("/common/connect-wallet-r.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 100% 100%;
+}
+
+@layer utilities {
+  .btn-connect-wallet-left-bg-hover {
+    background-image: url("/common/connect-wallet-hover-l.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+  }
+
+  .btn-connect-wallet-center-bg-hover {
+    background-image: url("/common/connect-wallet-hover-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-connect-wallet-right-bg-hover {
+    background-image: url("/common/connect-wallet-hover-r.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
+  }
+
+  .btn-connect-wallet-left-bg-inactive {
+    background-image: url("/common/connect-wallet-inactive-l.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+  }
+
+  .btn-connect-wallet-center-bg-inactive {
+    background-image: url("/common/connect-wallet-inactive-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-connect-wallet-right-bg-inactive {
+    background-image: url("/common/connect-wallet-inactive-r.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
+  }
+
+  .btn-connect-wallet-left-bg-active {
+    background-image: url("/common/connect-wallet-active-l.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+  }
+
+  .btn-connect-wallet-center-bg-active {
+    background-image: url("/common/connect-wallet-active-c.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .btn-connect-wallet-right-bg-active {
+    background-image: url("/common/connect-wallet-active-r.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
+  }
+}
+
+/* Connect Wallet Button End */
+
+/* Text Input Start */
+
+.input-bg {
+  background-image: url("/common/input-l.png"), url("/common/input-c.png"),
+    url("/common/input-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 16% 100%, 68.2% 100%, 16% 100%;
+}
+
+.input-error-bg {
+  background-image: url("/common/input-error-l.png"),
+    url("/common/input-error-c.png"), url("/common/input-error-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 16% 100%, 68.2% 100%, 16% 100%;
+}
+
+.input-success-bg {
+  background-image: url("/common/input-success-l.png"),
+    url("/common/input-success-c.png"), url("/common/input-success-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 16% 100%, 68.2% 100%, 16% 100%;
+}
+
+/* Text Input End */
+
+/* Checkbox Start */
+
+.custom-checkbox {
+  @apply relative flex items-start justify-center bg-transparent p-2 h-full;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  @apply invisible;
+}
+
+.custom-checkbox label {
+  @apply bg-transparent duration-100 ease-in-out p-2;
+  background-image: url("/icons/checkbox-off.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25px;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label {
+  @apply bg-transparent duration-100 ease-in-out p-2;
+  background-image: url("/icons/checkbox-on.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25px;
+}
+
+/* Checkbox End */
+
+/* Select Start */
+
+.select-bg {
+  background-image: url("/common/btn-primary-l.png"),
+    url("/common/btn-primary-c.png"), url("/common/btn-primary-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 45px 100%, calc(100% - 89px) 100%, 45px 100%;
+  @apply flex flex-row w-full h-full px-7 py-5;
+}
+
+.select-bg-hover {
+  background-image: url("/common/btn-primary-hover-l.png"),
+    url("/common/btn-primary-hover-c.png"),
+    url("/common/btn-primary-hover-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 45px 100%, calc(100% - 89px) 100%, 45px 100%;
+  @apply flex flex-row w-full h-full px-7 py-5;
+}
+
+.select-bg-active {
+  background-image: url("/common/btn-primary-active-l.png"),
+    url("/common/btn-primary-active-c.png"),
+    url("/common/btn-primary-active-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 45px 100%, calc(100% - 89px) 100%, 45px 100%;
+  @apply flex flex-row w-full h-full px-7 py-5;
+}
+
+.select-bg-inactive {
+  background-image: url("/common/btn-primary-inactive-l.png"),
+    url("/common/btn-primary-inactive-c.png"),
+    url("/common/btn-primary-inactive-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 45px 100%, calc(100% - 89px) 100%, 45px 100%;
+  @apply flex flex-row w-full h-full px-7 py-5;
+}
+
+/* Select End */
+
+/* Date Picker Start */
+
+.date-picker {
+  background-image: url("/common/btn-primary-l.png"),
+    url("/common/btn-primary-c.png"), url("/common/btn-primary-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 40px 100%, calc(100% - 80px) 100%, 40px 100%;
+  @apply py-4 px-5;
+}
+
+.date-picker-hover {
+  background-image: url("/common/btn-primary-hover-l.png"),
+    url("/common/btn-primary-hover-c.png"),
+    url("/common/btn-primary-hover-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 40px 100%, calc(100% - 80px) 100%, 40px 100%;
+  @apply py-4 px-5;
+}
+
+.date-picker-active {
+  background-image: url("/common/btn-primary-active-l.png"),
+    url("/common/btn-primary-active-c.png"),
+    url("/common/btn-primary-active-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 40px 100%, calc(100% - 80px) 100%, 40px 100%;
+  @apply py-4 px-5;
+}
+
+.date-picker-inactive {
+  background-image: url("/common/btn-primary-inactive-l.png"),
+    url("/common/btn-primary-inactive-c.png"),
+    url("/common/btn-primary-inactive-r.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left, center, right;
+  background-size: 40px 100%, calc(100% - 80px) 100%, 40px 100%;
+  @apply py-4 px-5;
+}
+
+/* Date Picker End */
+
+/* Date Tab Button Start */
+
+.tab-odd-left {
+  background-image: url("/common/tab-odd-l-ac.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+}
+
+.tab-odd-center {
+  background-image: url("/common/tab-odd-c-ac.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.tab-odd-right {
+  background-image: url("/common/tab-odd-r-ac.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 100% 100%;
+}
+
+.tab-even-left {
+  background-image: url("/common/tab-even-l-ac.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+}
+
+.tab-even-center {
+  background-image: url("/common/tab-even-c-ac.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.tab-even-right {
+  background-image: url("/common/tab-even-r-ac.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 100% 100%;
+}
+
+.tab-odd-left-inc {
+  background-image: url("/common/tab-odd-l-inc.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+}
+
+.tab-odd-center-inc {
+  background-image: url("/common/tab-odd-c-inc.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.tab-odd-right-inc {
+  background-image: url("/common/tab-odd-r-inc.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 100% 100%;
+}
+
+.tab-even-left-inc {
+  background-image: url("/common/tab-even-l-inc.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+}
+
+.tab-even-center-inc {
+  background-image: url("/common/tab-even-c-inc.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.tab-even-right-inc {
+  background-image: url("/common/tab-even-r-inc.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 100% 100%;
+}
+
+.tab-start-referral {
+  background-image: url("/account/first-corner.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 19% 80%;
+}
+
+.tab-end-even-referral {
+  background-image: url("/account/last-corner.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 19% 80%;
+}
+
+.tab-start-cashback {
+  background-image: url("/account/first-corner.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 11% 80%;
+}
+
+.tab-end-even-cashback {
+  background-image: url("/account/last-corner.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 11% 80%;
+}
+
+.overview-strip {
+  background-image: url("/referral/overview-strip.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.overview-frame {
+  background-image: url("/common/referral-overview.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.campaign-row {
+  background-image: url("/common/campaign-row.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.campaign-sub-row {
+  background-image: url("/common/campaign-sub-row.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.balance-conformation-bar {
+  background-image: url("/common/bar-referral.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.campaign-balance-frame {
+  background-image: url("/common/campaign-balance.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.frame {
+  background-image: url("/common/frame-1a.png"), url("/common/frame-1b.png"),
+    url("/common/frame-1c.png"), url("/common/frame-2a.png"),
+    url("/common/frame-2b.png"), url("/common/frame-2c.png"),
+    url("/common/frame-3a.png"), url("/common/frame-3b.png"),
+    url("/common/frame-3c.png"), url("/common/frame-gradient.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0px 0px, 9rem 0px, 100% 0px, center left, 9rem 9rem,
+    center right, bottom left, 9rem 100%, bottom right, center center;
+  background-size: 9rem 9rem, calc(100% - 18.05rem) 9rem, 9rem 9rem,
+    9rem calc(100% - 18rem), calc(100% - 18.05rem) calc(100% - 18rem),
+    9rem calc(100% - 18rem), 9rem 9rem, calc(100% - 18.05rem) 9rem, 9rem 9rem,
+    100% 100%;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 6.75rem),
+    calc(100% - 6.75rem) 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.frame-sm {
+  background-image: url("/common/frame-1a.png"), url("/common/frame-1b.png"),
+    url("/common/frame-1c.png"), url("/common/frame-2a.png"),
+    url("/common/frame-2b.png"), url("/common/frame-2c.png"),
+    url("/common/frame-3a.png"), url("/common/frame-3b.png"),
+    url("/common/frame-3c.png"), url("/common/frame-gradient.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0px 0px, 6rem 0px, 100% 0px, center left, 6rem 6rem,
+    center right, bottom left, 6rem 100%, bottom right, center center;
+  background-size: 6rem 6rem, calc(100% - 12.05rem) 6rem, 6rem 6rem,
+    6rem calc(100% - 12rem), calc(100% - 12.05rem) calc(100% - 12rem),
+    6rem calc(100% - 12rem), 6rem 6rem, calc(100% - 12.05rem) 6rem, 6rem 6rem,
+    100% 100%;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 4.5rem),
+    calc(100% - 4.5rem) 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.frame-glow {
+  background-image: url("/common/frame-glow-1a.png"),
+    url("/common/frame-glow-1b.png"), url("/common/frame-glow-1c.png"),
+    url("/common/frame-glow-2a.png"), url("/common/frame-glow-2b.png"),
+    url("/common/frame-glow-2c.png"), url("/common/frame-glow-3a.png"),
+    url("/common/frame-glow-3b.png"), url("/common/frame-glow-3c.png"),
+    url("/common/frame-gradient.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: top left, top center, top right, center left,
+    center center, center right, bottom left, bottom center, bottom right,
+    center center;
+  background-size: 9rem 9rem, calc(100% - 18rem) 9rem, 9rem 9rem,
+    9rem calc(100% - 18rem), calc(100% - 18rem) calc(100% - 18rem),
+    9rem calc(100% - 18rem), 9rem 9rem, calc(100% - 18rem) 9rem, 9rem 9rem,
+    98% 98.5%;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 7.1rem),
+    calc(100% - 7.1rem) 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.frame-glow-sm {
+  background-image: url("/common/frame-glow-1a.png"),
+    url("/common/frame-glow-1b.png"), url("/common/frame-glow-1c.png"),
+    url("/common/frame-glow-2a.png"), url("/common/frame-glow-2b.png"),
+    url("/common/frame-glow-2c.png"), url("/common/frame-glow-3a.png"),
+    url("/common/frame-glow-3b.png"), url("/common/frame-glow-3c.png"),
+    url("/common/frame-gradient.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: top left, top center, top right, center left,
+    center center, center right, bottom left, bottom center, bottom right,
+    center center;
+  background-size: 7rem 7rem, calc(100% - 14rem) 7rem, 7rem 7rem,
+    7rem calc(100% - 14rem), calc(100% - 14rem) calc(100% - 14rem),
+    7rem calc(100% - 14rem), 7rem 7rem, calc(100% - 14rem) 7rem, 7rem 7rem,
+    97% 97%;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 5.6rem),
+    calc(100% - 5.6rem) 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.drawer-frame {
+  background-image: url("/common/drawer-1.png"), url("/common/drawer-2.png"),
+    url("/common/drawer-3.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: top, center, bottom;
+  background-size: 100% 20%, 100% 60%, 100% 20%;
+}
+
+.drawer-label {
+  @apply whitespace-nowrap overflow-hidden tracking-widest heading mb-2 pointer-events-auto cursor-pointer opacity-100;
+}
+
+.referral-campaign-down {
+  animation: scale-in-ver-top 0.25s linear both;
+}
+
+@keyframes scale-in-ver-top {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+.referral-campaign-up {
+  animation: scale-out-ver-top 0.25s linear both;
+}
+
+@keyframes scale-out-ver-top {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+.dropdown-arrow-rotate-up {
+  animation: rotate-center 0.5s linear alternate both;
+}
+
+.dropdown-arrow-rotate-dn {
+  animation: rotate-center 0.5s linear alternate both;
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.transition-delay-50 {
+  transition-delay: 50ms;
+}
+.transition-delay-100 {
+  transition-delay: 100ms;
+}
+.transition-delay-150 {
+  transition-delay: 150ms;
+}
+.transition-delay-200 {
+  transition-delay: 200ms;
+}
+.transition-delay-250 {
+  transition-delay: 250ms;
+}
+.transition-delay-300 {
+  transition-delay: 300ms;
+}
+.transition-delay-350 {
+  transition-delay: 350ms;
+}
+.transition-delay-400 {
+  transition-delay: 400ms;
+}
+.transition-delay-450 {
+  transition-delay: 450ms;
+}
+.transition-delay-500 {
+  transition-delay: 500ms;
+}
+.transition-delay-550 {
+  transition-delay: 550ms;
+}
+.transition-delay-600 {
+  transition-delay: 600ms;
+}
+.transition-delay-650 {
+  transition-delay: 650ms;
+}
+.transition-delay-700 {
+  transition-delay: 700ms;
+}
+.transition-delay-750 {
+  transition-delay: 750ms;
+}
+.transition-delay-800 {
+  transition-delay: 800ms;
+}
+.transition-delay-850 {
+  transition-delay: 850ms;
+}
+.transition-delay-900 {
+  transition-delay: 900ms;
+}
+.transition-delay-950 {
+  transition-delay: 950ms;
+}
+.transition-delay-1000 {
+  transition-delay: 1000ms;
+}
+.transition-delay-1050 {
+  transition-delay: 1050ms;
+}
+.transition-delay-1000 {
+  transition-delay: 1000ms;
+}
+.transition-delay-1050 {
+  transition-delay: 1050ms;
+}
+.transition-delay-1100 {
+  transition-delay: 1100ms;
+}
+.transition-delay-1150 {
+  transition-delay: 1150ms;
+}
+.transition-delay-1200 {
+  transition-delay: 1200ms;
+}
+.transition-delay-1250 {
+  transition-delay: 1250ms;
+}
+.transition-delay-1300 {
+  transition-delay: 1300ms;
+}
+.transition-delay-1350 {
+  transition-delay: 1350ms;
+}
+.transition-delay-1400 {
+  transition-delay: 1400ms;
+}
+.transition-delay-1450 {
+  transition-delay: 1450ms;
+}
+.transition-delay-1500 {
+  transition-delay: 1500ms;
+}
+.transition-delay-1550 {
+  transition-delay: 1550ms;
+}
+.transition-delay-1600 {
+  transition-delay: 1600ms;
+}
+.transition-delay-1650 {
+  transition-delay: 1650ms;
+}
+.transition-delay-1700 {
+  transition-delay: 1700ms;
+}
+.transition-delay-1750 {
+  transition-delay: 1750ms;
+}
+.transition-delay-1800 {
+  transition-delay: 1800ms;
+}
+.transition-delay-1850 {
+  transition-delay: 1850ms;
+}
+.transition-delay-1900 {
+  transition-delay: 1900ms;
+}
+.transition-delay-1950 {
+  transition-delay: 1950ms;
+}
+.transition-delay-2000 {
+  transition-delay: 2000ms;
+}
+.transition-delay-2050 {
+  transition-delay: 2050ms;
+}
+.transition-delay-2100 {
+  transition-delay: 2100ms;
+}
+.transition-delay-2150 {
+  transition-delay: 2150ms;
+}
+.transition-delay-2200 {
+  transition-delay: 2200ms;
+}
+.transition-delay-2250 {
+  transition-delay: 2250ms;
+}
+.transition-delay-2300 {
+  transition-delay: 2300ms;
+}
+.transition-delay-2350 {
+  transition-delay: 2350ms;
+}
+.transition-delay-2400 {
+  transition-delay: 2400ms;
+}
+.transition-delay-2450 {
+  transition-delay: 2450ms;
+}
+.transition-delay-2500 {
+  transition-delay: 2500ms;
+}
+.transition-delay-2550 {
+  transition-delay: 2550ms;
+}
+.transition-delay-2600 {
+  transition-delay: 2600ms;
+}
+.transition-delay-2650 {
+  transition-delay: 2650ms;
+}
+.transition-delay-2700 {
+  transition-delay: 2700ms;
+}
+.transition-delay-2750 {
+  transition-delay: 2750ms;
+}
+.transition-delay-2800 {
+  transition-delay: 2800ms;
+}
+.transition-delay-2850 {
+  transition-delay: 2850ms;
+}
+.transition-delay-2900 {
+  transition-delay: 2900ms;
+}
+.transition-delay-2950 {
+  transition-delay: 2950ms;
+}
+.transition-delay-3000 {
+  transition-delay: 3000ms;
+}
+.transition-delay-3050 {
+  transition-delay: 3050ms;
+}
+
+.animation-delay-50 {
+  animation-delay: 50ms;
+}
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+.animation-delay-250 {
+  animation-delay: 250ms;
+}
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+.animation-delay-350 {
+  animation-delay: 350ms;
+}
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+.animation-delay-450 {
+  animation-delay: 450ms;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+.animation-delay-550 {
+  animation-delay: 550ms;
+}
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+.animation-delay-650 {
+  animation-delay: 650ms;
+}
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+.animation-delay-750 {
+  animation-delay: 750ms;
+}
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+.animation-delay-850 {
+  animation-delay: 850ms;
+}
+.animation-delay-900 {
+  animation-delay: 900ms;
+}
+.animation-delay-950 {
+  animation-delay: 950ms;
+}
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+.animation-delay-1050 {
+  animation-delay: 1050ms;
+}
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+.animation-delay-1050 {
+  animation-delay: 1050ms;
+}
+.animation-delay-1100 {
+  animation-delay: 1100ms;
+}
+.animation-delay-1150 {
+  animation-delay: 1150ms;
+}
+.animation-delay-1200 {
+  animation-delay: 1200ms;
+}
+.animation-delay-1250 {
+  animation-delay: 1250ms;
+}
+.animation-delay-1300 {
+  animation-delay: 1300ms;
+}
+.animation-delay-1350 {
+  animation-delay: 1350ms;
+}
+.animation-delay-1400 {
+  animation-delay: 1400ms;
+}
+.animation-delay-1450 {
+  animation-delay: 1450ms;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1500ms;
+}
+.animation-delay-1550 {
+  animation-delay: 1550ms;
+}
+.animation-delay-1600 {
+  animation-delay: 1600ms;
+}
+.animation-delay-1650 {
+  animation-delay: 1650ms;
+}
+.animation-delay-1700 {
+  animation-delay: 1700ms;
+}
+.animation-delay-1750 {
+  animation-delay: 1750ms;
+}
+.animation-delay-1800 {
+  animation-delay: 1800ms;
+}
+.animation-delay-1850 {
+  animation-delay: 1850ms;
+}
+.animation-delay-1900 {
+  animation-delay: 1900ms;
+}
+.animation-delay-1950 {
+  animation-delay: 1950ms;
+}
+.animation-delay-2000 {
+  animation-delay: 2000ms;
+}
+.animation-delay-2050 {
+  animation-delay: 2050ms;
+}
+.animation-delay-2100 {
+  animation-delay: 2100ms;
+}
+.animation-delay-2150 {
+  animation-delay: 2150ms;
+}
+.animation-delay-2200 {
+  animation-delay: 2200ms;
+}
+.animation-delay-2250 {
+  animation-delay: 2250ms;
+}
+.animation-delay-2300 {
+  animation-delay: 2300ms;
+}
+.animation-delay-2350 {
+  animation-delay: 2350ms;
+}
+.animation-delay-2400 {
+  animation-delay: 2400ms;
+}
+.animation-delay-2450 {
+  animation-delay: 2450ms;
+}
+.animation-delay-2500 {
+  animation-delay: 2500ms;
+}
+.animation-delay-2550 {
+  animation-delay: 2550ms;
+}
+.animation-delay-2600 {
+  animation-delay: 2600ms;
+}
+.animation-delay-2650 {
+  animation-delay: 2650ms;
+}
+.animation-delay-2700 {
+  animation-delay: 2700ms;
+}
+.animation-delay-2750 {
+  animation-delay: 2750ms;
+}
+.animation-delay-2800 {
+  animation-delay: 2800ms;
+}
+.animation-delay-2850 {
+  animation-delay: 2850ms;
+}
+.animation-delay-2900 {
+  animation-delay: 2900ms;
+}
+.animation-delay-2950 {
+  animation-delay: 2950ms;
+}
+.animation-delay-3000 {
+  animation-delay: 3000ms;
+}
+.animation-delay-3050 {
+  animation-delay: 3050ms;
+}
+
+.cashback-frame {
+  background-image: url("/cashback/my-cashback-frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}

@@ -1,0 +1,54 @@
+<svg id="signOutBtn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 327 75">
+    <defs>
+        <filter id="filter" filterUnits="userSpaceOnUse">
+            <feFlood result="flood" flood-color="#98e3f9"/>
+            <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+            <feBlend result="blend" in2="SourceGraphic"/>
+        </filter>
+        <filter id="filter-2" x="1462" y="378" width="305" height="51" filterUnits="userSpaceOnUse">
+            <feFlood result="flood" flood-color="#98f9ea"/>
+            <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+            <feBlend result="blend" in2="SourceGraphic"/>
+        </filter>
+        <filter id="filter-3" x="1454" y="370" width="322" height="68" filterUnits="userSpaceOnUse">
+            <feGaussianBlur result="blur" stdDeviation="2.333" in="SourceAlpha"/>
+            <feComposite result="composite"/>
+            <feComposite result="composite-2"/>
+            <feComposite result="composite-3"/>
+            <feFlood result="flood" flood-color="#98e3f9" flood-opacity=".35"/>
+            <feComposite result="composite-4" operator="in" in2="composite-3"/>
+            <feBlend result="blend" mode="screen" in2="SourceGraphic"/>
+            <feBlend result="blend-2" in="SourceGraphic"/>
+            <feFlood result="flood-2" flood-color="#98f9ea"/>
+            <feComposite result="composite-5" operator="in" in2="SourceGraphic"/>
+            <feBlend result="blend-3" in2="blend-2"/>
+        </filter>
+        <filter id="filter-4" x="1459" y="377" width="322" height="68" filterUnits="userSpaceOnUse">
+            <feGaussianBlur result="blur" stdDeviation="2.333" in="SourceAlpha"/>
+            <feComposite result="composite"/>
+            <feComposite result="composite-2"/>
+            <feComposite result="composite-3"/>
+            <feFlood result="flood" flood-color="#98e3f9" flood-opacity=".35"/>
+            <feComposite result="composite-4" operator="in" in2="composite-3"/>
+            <feBlend result="blend" mode="screen" in2="SourceGraphic"/>
+            <feBlend result="blend-2" in="SourceGraphic"/>
+            <feFlood result="flood-2" flood-color="#98f9ea"/>
+            <feComposite result="composite-5" operator="in" in2="SourceGraphic"/>
+            <feBlend result="blend-3" in2="blend-2"/>
+        </filter>
+        <style>
+            .cls-1{filter:url(#filter)}.cls-2{fill:#98e3f9;opacity:.3;filter:url(#filter-2);fill-rule:evenodd}.cls-3,.cls-4{fill-rule:evenodd;fill:none;stroke:#98f9ea;stroke-width:3px}.cls-3{filter:url(#filter-3)}.cls-4{opacity:.2;filter:url(#filter-4)}
+        </style>
+    </defs>
+    <g id="btn" class="cls-1">
+        <path id="bntFill" class="cls-2" d="M1767 411.174V378h-282.74l-22.25 21.261V429h284.12Z" transform="translate(-1454 -370)"/>
+        <g transform="translate(-1454 -370)" style="fill:none;filter:url(#filter-3)">
+            <path id="btnOutline" class="cls-3" d="M1767 411.174V378h-282.74l-22.25 21.261V429h284.12Z" style="stroke:inherit;filter:none;fill:inherit"/>
+        </g>
+        <use transform="translate(-1454 -370)" xlink:href="#btnOutline" style="stroke:#98f9ea;filter:none;fill:none"/>
+        <g transform="translate(-1454 -370)" style="fill:none;filter:url(#filter-4)">
+            <path id="btnOutline_copy" data-name="btnOutline copy" class="cls-4" d="M1772 418.174V385h-282.74l-22.25 21.261V436h284.12Z" style="stroke:inherit;filter:none;fill:inherit"/>
+        </g>
+        <use transform="translate(-1454 -370)" xlink:href="#btnOutline_copy" style="stroke:#98f9ea;filter:none;fill:none"/>
+    </g>
+</svg>

@@ -1,0 +1,64 @@
+.heading {
+  font-family: "Days One", sans-serif;
+  color: white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  /* font-size: 15px; */
+}
+
+.login-title {
+  animation: typing 0.8s steps(5, end) 1s 1 normal both;
+  animation-delay: 0.3s;
+  /* text-shadow: -7px 7px rgba(255, 255, 255, 0.2); */
+  @apply w-full !text-5xl whitespace-nowrap overflow-hidden tracking-widest heading p-2;
+}
+
+.signup-title {
+  animation: typing 0.8s steps(7, end) 1s 1 normal both;
+  animation-delay: 0.3s;
+  /* text-shadow: -7px 7px rgba(255, 255, 255, 0.2); */
+  @apply w-full !text-5xl whitespace-nowrap overflow-hidden tracking-[0.2em] heading p-2;
+}
+
+.login-btn-label {
+  animation: typing 0.8s steps(5, end) 1s 1 normal both;
+  animation-delay: 1s;
+  /* text-shadow: -3px 3px rgba(255, 255, 255, 0.2); */
+  @apply w-full text-lg whitespace-nowrap overflow-hidden tracking-widest heading mb-0 pointer-events-auto cursor-pointer opacity-100 p-2;
+}
+
+.create-account-btn-label {
+  animation: typing 0.8s steps(14, end) 1s 1 normal both;
+  animation-delay: 1s;
+  /* text-shadow: -3px 3px rgba(255, 255, 255, 0.2); */
+  @apply w-full text-lg whitespace-nowrap overflow-hidden tracking-widest heading mb-0 pointer-events-auto cursor-pointer opacity-100 p-2;
+}
+
+.google-btn-label {
+  animation: typing 0.8s steps(6, end) 1s 1 normal both;
+  animation-delay: 1.4s;
+  @apply w-full text-lg whitespace-nowrap overflow-hidden tracking-widest heading mb-2 pointer-events-auto cursor-pointer opacity-100;
+}
+
+.metamask-btn-label {
+  animation: typing 0.8s steps(7, end) 1s 1 normal both;
+  animation-delay: 1.4s;
+  @apply w-full text-lg whitespace-nowrap overflow-hidden tracking-widest heading mb-2 pointer-events-auto cursor-pointer opacity-100;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.account-settings-btn-label {
+  @apply text-left heading mb-2 w-full pl-0 cursor-pointer;
+}
+
+.connect-wallet-btn-label {
+  @apply heading mb-2 w-full pl-2 cursor-pointer truncate;
+}

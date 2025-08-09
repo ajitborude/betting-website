@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  wagerbet-frontend:
+    image: 590328391605.dkr.ecr.ap-south-1.amazonaws.com/platform-frontend:latest
+    ports:
+      - '8084:8084'
