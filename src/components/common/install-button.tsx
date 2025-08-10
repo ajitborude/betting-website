@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import React, { useState } from 'react';
 import Install from "@/public/common/install.png";
 import InstallHover from "@/public/common/install-hover.png";
@@ -36,8 +36,12 @@ const InstallButton: React.FC<Props> = () => {
         src={imageSource}
         alt="install"
         priority={true}
-        objectFit='contain'
-        placeholder="blur" />
+        placeholder="blur"
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+          objectFit: "contain"
+        }} />
     </div>
   );
 };

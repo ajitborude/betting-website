@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import React from 'react';
 import { IconMapper } from '@/helper/icon-mapper';
 
@@ -33,8 +33,12 @@ const Icon: React.FC<Props> = ({ source, type, size }): JSX.Element => {
           src={type ? iconSource[type] as string : iconSource?.default as string}
           width={dimensions?.width}
           height={dimensions?.height}
-          objectFit='contain'
-          alt='icon' />
+          alt='icon'
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            objectFit: "contain"
+          }} />
       </div>
     );
   }

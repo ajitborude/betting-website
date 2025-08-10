@@ -4,7 +4,7 @@ import { wrapper } from '@/redux/store';
 // import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { Transition } from '@headlessui/react';
-import Image from 'next/image';
+import Image from "next/image";
 import HexFrame from "@/public/daily-tasks/hex-frame.png";
 import HexProgress from "@/public/daily-tasks/hex-progress.png";
 import TaskRectangle from "@/public/daily-tasks/task-rectangle.png";
@@ -51,10 +51,24 @@ const DailyTasksPage: NextPage<PageProps> = (_props) => {
             <div className="mt-8 flex flex-row items-center justify-start w-full">
               <div className="flex flex-row items-center justify-center relative w-1/4">
                 <div className="scale-125">
-                  <Image src={HexFrame} alt='hex' objectFit='contain' />
+                  <Image
+                    src={HexFrame}
+                    alt='hex'
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain"
+                    }} />
                 </div>
                 <div className="absolute scale-[95%]">
-                  <Image src={HexProgress} alt='hex' objectFit='contain' />
+                  <Image
+                    src={HexProgress}
+                    alt='hex'
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain"
+                    }} />
                 </div>
                 <div className="absolute w-full p-20 flex flex-col items-center justify-center">
                   <label className="heading text-3xl mb-2">
@@ -66,7 +80,14 @@ const DailyTasksPage: NextPage<PageProps> = (_props) => {
 
               </div>
               <div className=" flex flex-row items-center justify-start absolute left-[24%] w-[70%]">
-                <Image src={TaskRectangle} alt='hex' objectFit="fill" />
+                <Image
+                  src={TaskRectangle}
+                  alt='hex'
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "fill"
+                  }} />
                 <div className="flex flex-row items-center justify-end absolute w-5/6 left-[7%] px-10 py-4">
                   <div className="flex flex-col items-center justify-center w-2/4">
                     <label className="heading !text-special-500 mb-6"> Daily Task countdown</label>
@@ -95,7 +116,14 @@ const DailyTasksPage: NextPage<PageProps> = (_props) => {
             </div>
             <div className="mt-8 flex flex-row items-center justify-between w-full px-12">
               <div className="flex flex-row items-center justify-center  w-1/4 px-12 relative">
-                <Image src={TaskFrame} alt='hex' objectFit='contain' />
+                <Image
+                  src={TaskFrame}
+                  alt='hex'
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
                 <div className="absolute  w-full px-16 h-full">
                   <div className=" w-full h-[50%] flex items-center justify-center">
                     <label className="heading !text-special-500">Task 1</label>
@@ -113,7 +141,14 @@ const DailyTasksPage: NextPage<PageProps> = (_props) => {
                 </div>
               </div>
               <div className="flex flex-row items-center justify-center  w-1/4 px-12 relative">
-                <Image src={TaskFrame} alt='hex' objectFit='contain' />
+                <Image
+                  src={TaskFrame}
+                  alt='hex'
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
                 <div className="absolute  w-full px-16 h-full">
                   <div className=" w-full h-[50%] flex items-center justify-center">
                     <label className="heading !text-special-500">Task 2</label>
@@ -131,7 +166,14 @@ const DailyTasksPage: NextPage<PageProps> = (_props) => {
                 </div>
               </div>
               <div className="flex flex-row items-center justify-center  w-1/4 px-12 relative">
-                <Image src={TaskFrame} alt='hex' objectFit='contain' />
+                <Image
+                  src={TaskFrame}
+                  alt='hex'
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
                 <div className="absolute  w-full px-16 h-full">
                   <div className=" w-full h-[50%] flex items-center justify-center">
                     <label className="heading !text-special-500">Task 3</label>
@@ -149,7 +191,14 @@ const DailyTasksPage: NextPage<PageProps> = (_props) => {
                 </div>
               </div>
               <div className="flex flex-row items-center justify-center  w-1/4 px-12 relative">
-                <Image src={TaskFrame} alt='hex' objectFit='contain' />
+                <Image
+                  src={TaskFrame}
+                  alt='hex'
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
                 <div className="absolute  w-full px-16 h-full">
                   <div className=" w-full h-[50%] flex items-center justify-center">
                     <label className="heading !text-special-500">Task 4</label>

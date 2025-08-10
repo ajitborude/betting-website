@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import React, { useState } from 'react';
 import HamMenu from "@/public/common/ham-menu.png";
 import HamMenuHover from "@/public/common/ham-menu-hover.png";
@@ -35,10 +35,13 @@ const HamMenuButton: React.FC<Props> = () => {
       <Image
         src={imageSource}
         alt="close"
-        layout="fill"
-        objectFit='contain'
         priority={true}
-        placeholder="blur" />
+        placeholder="blur"
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "contain"
+        }} />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { wrapper } from '@/redux/store';
 // import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { Transition } from '@headlessui/react';
-import Image from 'next/image';
+import Image from "next/image";
 import LobbyCoins from "@/public/common/lobby.png";
 import BigHex from "@/public/referral/big-hex.png";
 import Eclipse from "@/public/cashback/about-cashback-eclipse.png";
@@ -51,7 +51,14 @@ const RankSystemPage: NextPage<PageProps> = (_props) => {
             </label>
 
             <div className="mt-8 flex flex-row items-center justify-center w-full">
-              <Image src={LobbyCoins} alt='hex' objectFit='contain' />
+              <Image
+                src={LobbyCoins}
+                alt='hex'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
             </div>
 
             <div className="mt-16 flex flex-col items-center justify-between w-full">
@@ -93,30 +100,78 @@ const RankSystemPage: NextPage<PageProps> = (_props) => {
                   <div className='flex flex-row'>
                     <div className='relative flex items-center justify-center w-full mx-4 md:w-1/3'>
                       <div className='flex items-center justify-center referral-hex-big' >
-                        <Image src={BigHex} alt='hex' objectFit='contain' />
+                        <Image
+                          src={BigHex}
+                          alt='hex'
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                          }} />
                       </div>
                       <div className=' referral-hex-text-container'>
-                        <Image src={Eclipse} alt='eclipse' objectFit='contain' width={80} height={80} />
+                        <Image
+                          src={Eclipse}
+                          alt='eclipse'
+                          width={80}
+                          height={80}
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                          }} />
                         <label className='heading !text-title-500 text-xl truncate mt-2'>Maximus Helis</label>
                         <label className='referral-hex-text-4'>Maximus Helis Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum vol Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum vol</label>
                       </div>
                     </div>
                     <div className='relative flex items-center justify-center w-full mx-4 md:w-1/3 '>
                       <div className='flex items-center justify-center referral-hex-big' >
-                        <Image src={BigHex} alt='hex' objectFit='contain' />
+                        <Image
+                          src={BigHex}
+                          alt='hex'
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                          }} />
                       </div>
                       <div className=' referral-hex-text-container'>
-                        <Image src={Eclipse} alt='eclipse' objectFit='contain' width={80} height={80} />
+                        <Image
+                          src={Eclipse}
+                          alt='eclipse'
+                          width={80}
+                          height={80}
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                          }} />
                         <label className='heading !text-title-500 text-xl truncate mt-2'>Maximus Helis</label>
                         <label className='referral-hex-text-4'>Maximus Helis Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum vol Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum vol</label>
                       </div>
                     </div>
                     <div className='relative flex items-center justify-center w-full mx-4 md:w-1/3 '>
                       <div className='flex items-center justify-center referral-hex-big' >
-                        <Image src={BigHex} alt='hex' objectFit='contain' />
+                        <Image
+                          src={BigHex}
+                          alt='hex'
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                          }} />
                       </div>
                       <div className=' referral-hex-text-container'>
-                        <Image src={Eclipse} alt='eclipse' objectFit='contain' width={80} height={80} />
+                        <Image
+                          src={Eclipse}
+                          alt='eclipse'
+                          width={80}
+                          height={80}
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                          }} />
                         <label className='heading !text-title-500 text-xl truncate mt-2'>Maximus Helis</label>
                         <label className='referral-hex-text-4'>Maximus Helis Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum vol Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum vol</label>
                       </div>
@@ -148,7 +203,14 @@ const RankSystemPage: NextPage<PageProps> = (_props) => {
 
               <div className="mt-8 flex flex-row items-center justify-center w-full">
                 <div className="flex flex-row items-center justify-center w-[22%] relative ">
-                  <Image src={TaskFrame} alt='hex' objectFit='contain' />
+                  <Image
+                    src={TaskFrame}
+                    alt='hex'
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain"
+                    }} />
                   <div className="absolute w-full px-16 h-full items-end flex">
                     <div className="w-full h-3/4 flex items-center justify-center flex-col pb-4">
                       <label className="heading !text-title-500 text-center my-2">gambler II</label>
@@ -168,7 +230,14 @@ const RankSystemPage: NextPage<PageProps> = (_props) => {
                   </div>
                 </div>
                 <div className="flex flex-row items-center justify-center w-1/3 relative px-8  ">
-                  <Image src={TaskFrame} alt='hex' objectFit='contain' />
+                  <Image
+                    src={TaskFrame}
+                    alt='hex'
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain"
+                    }} />
                   <div className="absolute w-full px-12 h-full items-end flex">
                     <div className="w-full h-3/4 flex items-center justify-center flex-col pb-4">
                       <label className="heading !text-title-500 text-center my-2 !text-xl">gambler I</label>
@@ -188,7 +257,14 @@ const RankSystemPage: NextPage<PageProps> = (_props) => {
                   </div>
                 </div>
                 <div className="flex flex-row items-center justify-center w-[22%] relative">
-                  <Image src={TaskFrame} alt='hex' objectFit='contain' />
+                  <Image
+                    src={TaskFrame}
+                    alt='hex'
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain"
+                    }} />
                   <div className="absolute w-full px-16 h-full items-end flex">
                     <div className="w-full h-3/4 flex items-center justify-center flex-col pb-4">
                       <label className="heading !text-title-500 text-center my-2">gambler III</label>

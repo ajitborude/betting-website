@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import SocialButton from './social-button';
 import { Transition } from '@headlessui/react';
 interface Props {
@@ -79,8 +79,12 @@ const Footer: React.FC<Props> = (_props) => {
                 src='/icons/18-plus.png'
                 width={90}
                 height={90}
-                objectFit='contain'
-                alt='icon' />
+                alt='icon'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
               <label className='heading'>responsible gaming</label>
             </div>
             <label className="text-white text-sm p-6 leading-5 w-[85%] text-justify -mt-8 footer-warning-frame">
@@ -92,20 +96,32 @@ const Footer: React.FC<Props> = (_props) => {
                 src='/icons/pci.png'
                 width={70}
                 height={15}
-                objectFit='contain'
-                alt='icon' />
+                alt='icon'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
               <Image
                 src='/icons/siq.png'
                 width={70}
                 height={15}
-                objectFit='contain'
-                alt='icon' />
+                alt='icon'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
               <Image
                 src='/icons/gambler.png'
                 width={70}
                 height={15}
-                objectFit='contain'
-                alt='icon' />
+                alt='icon'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
             </div>
           </div>
         </footer >

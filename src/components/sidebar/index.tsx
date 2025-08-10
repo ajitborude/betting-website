@@ -45,7 +45,6 @@ const SideBar: React.FC<SideBarProps> = (_props): JSX.Element => {
           <label className='drawer-label'>Rank System</label>
         </SecondaryButton>
       </div>
-
       {/* <label className='py-2 text-sm text-white'>Version : {process.env.NEXT_PUBLIC_VERSION}</label> */}
       {/* <div className="px-4 py-6">
         <span className="block w-32 h-10 bg-gray-200 rounded-lg"></span>

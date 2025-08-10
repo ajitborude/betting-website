@@ -6,7 +6,7 @@ import CloseButton from '../common/close-button';
 import InstallButton from '../common/install-button';
 import MetamaskBg from '@/public/common//metamask-bg.png';
 import MetamaskIcon from '@/public/common//metamask-icon.png';
-import Image from 'next/image';
+import Image from "next/image";
 
 const ConnectMetamask: React.FC<any> = ({ isOpened }): JSX.Element => {
   const { confirm, decline } = useModal();
@@ -63,16 +63,24 @@ const ConnectMetamask: React.FC<any> = ({ isOpened }): JSX.Element => {
                             src={MetamaskBg}
                             alt="metamask-bg"
                             priority={true}
-                            objectFit='contain'
-                            placeholder="blur" />
+                            placeholder="blur"
+                            style={{
+                              maxWidth: "100%",
+                              height: "auto",
+                              objectFit: "contain"
+                            }} />
                         </div>
                         <div className='absolute w-24 h-24 top-3'>
                           <Image
                             src={MetamaskIcon}
                             alt="metamask-icon"
                             priority={true}
-                            objectFit='contain'
-                            placeholder="blur" />
+                            placeholder="blur"
+                            style={{
+                              maxWidth: "100%",
+                              height: "auto",
+                              objectFit: "contain"
+                            }} />
                         </div>
                       </div>
                       <label className='text-lg heading'>Metamask</label>

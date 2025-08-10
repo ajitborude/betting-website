@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    outputStandalone: true,
-  },
+  output: 'standalone',
   images: {
     domains: ['api.lorem.space'],
     formats: ['image/avif', 'image/webp'],

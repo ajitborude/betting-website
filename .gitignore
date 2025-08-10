@@ -36,5 +36,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 .vscode
-
-yarn.lock
+docker-push.sh

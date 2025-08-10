@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import Icon from '../common/icon';
 import SocialButton from '../common/social-button';
 import SecondaryButton from '../common/secondary-button';
-import Image from 'next/image';
+import Image from "next/image";
 import SmallHex from "@/public/referral/small-hex.png";
 import BigHex from "@/public/referral/big-hex.png";
 import { Transition } from '@headlessui/react';
@@ -138,17 +138,38 @@ const OverviewPage: React.FC = (): JSX.Element => {
         <div className='flex flex-col items-center justify-center w-full my-4'>
           <div className='flex flex-row items-center justify-center w-[55%]'>
             <div className='flex items-center justify-center mr-20 2xl:mr-24 referral-hex-small' >
-              <Image src={SmallHex} alt='hex' objectFit='contain' />
+              <Image
+                src={SmallHex}
+                alt='hex'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
             </div>
             <div className='flex items-center justify-center ml-20 2xl:ml-24 referral-hex-small' >
-              <Image src={SmallHex} alt='hex' objectFit='contain' />
+              <Image
+                src={SmallHex}
+                alt='hex'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
             </div>
           </div>
 
           <div className='flex flex-row -my-28'>
             <div className='relative flex items-center justify-center w-full mx-4 md:w-1/3'>
               <div className='flex items-center justify-center referral-hex-big' >
-                <Image src={BigHex} alt='hex' objectFit='contain' />
+                <Image
+                  src={BigHex}
+                  alt='hex'
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
               </div>
               <div className=' referral-hex-text-container'>
                 <label className='referral-hex-text-1'>For </label>
@@ -159,7 +180,14 @@ const OverviewPage: React.FC = (): JSX.Element => {
             </div>
             <div className='relative flex items-center justify-center w-full mx-4 md:w-1/3 '>
               <div className='flex items-center justify-center referral-hex-big' >
-                <Image src={BigHex} alt='hex' objectFit='contain' />
+                <Image
+                  src={BigHex}
+                  alt='hex'
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
               </div>
               <div className='referral-hex-text-container'>
                 <label className='referral-hex-text-1'>For </label>
@@ -170,7 +198,14 @@ const OverviewPage: React.FC = (): JSX.Element => {
             </div>
             <div className='relative flex items-center justify-center w-full mx-4 md:w-1/3 '>
               <div className='flex items-center justify-center referral-hex-big' >
-                <Image src={BigHex} alt='hex' objectFit='contain' />
+                <Image
+                  src={BigHex}
+                  alt='hex'
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
               </div>
               <div className='referral-hex-text-container'>
                 <label className='referral-hex-text-1'>For </label>
@@ -183,10 +218,24 @@ const OverviewPage: React.FC = (): JSX.Element => {
 
           <div className='flex flex-row items-center justify-center w-[55%]'>
             <div className='flex items-center justify-center mr-20 2xl:mr-24 referral-hex-small' >
-              <Image src={SmallHex} alt='hex' objectFit='contain' />
+              <Image
+                src={SmallHex}
+                alt='hex'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
             </div>
             <div className='flex items-center justify-center ml-20 2xl:ml-24 referral-hex-small' >
-              <Image src={SmallHex} alt='hex' objectFit='contain' />
+              <Image
+                src={SmallHex}
+                alt='hex'
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
             </div>
           </div>
         </div>
@@ -208,10 +257,24 @@ const OverviewPage: React.FC = (): JSX.Element => {
             </label>
           </div>
           <div className='flex items-center justify-center referral-hex-small' >
-            <Image src={SmallHex} alt='hex' objectFit='contain' />
+            <Image
+              src={SmallHex}
+              alt='hex'
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain"
+              }} />
           </div>
           <div className='flex items-center self-start justify-center -ml-10 w-28 h-28' >
-            <Image src={SmallHex} alt='hex' objectFit='contain' />
+            <Image
+              src={SmallHex}
+              alt='hex'
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain"
+              }} />
           </div>
         </div>
       </Transition>

@@ -35,15 +35,20 @@ export const modalThunkActions = {
       return new Promise<any>((resolve) => {
         const unsubscribe = store.subscribe(() => {
           const state: AppState = store.getState();
+          //@ts-ignore
           if (state.modalReducer.isConfirmed) {
             unsubscribe();
             resolve({
+              //@ts-ignore
               ...state.modalReducer.modalResponse,
+              //@ts-ignore
               isConfirmed: state.modalReducer.isConfirmed,
             });
           }
+          //@ts-ignore
           if (state.modalReducer.isDeclined) {
             unsubscribe();
+            //@ts-ignore
             resolve({ isConfirmed: state.modalReducer.isConfirmed });
           }
         });
@@ -60,7 +65,7 @@ export const modalThunkActions = {
   }),
 };
 
-export const modalSlice = createSlice({
+export const modalSlice: any = createSlice({
   name: "modal",
   initialState: initialModalState,
   reducers: {

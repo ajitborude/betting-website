@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import React, { useState } from 'react';
 import Icon from './icon';
 import TopBarMenuDown from "@/public/common/menu-down.png";
@@ -50,9 +50,10 @@ const TopBarMenuButton: React.FC<Props> = ({ type }) => {
       <Image
         src={imageSource}
         alt="topBarMenu"
-        layout="fill"
         priority={true}
-        placeholder="blur" />
+        placeholder="blur"
+        fill
+        sizes="100vw" />
       <Icon source='dropdown' size='sm' type={type} />
     </div>
   );

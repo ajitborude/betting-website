@@ -18,8 +18,8 @@ import {
   PayloadAction,
   SerializedError,
 } from "@reduxjs/toolkit";
-import { AppState } from "../store";
 import { HYDRATE } from "next-redux-wrapper";
+import { AppState } from "../store";
 
 export const login = createAsyncThunk(
   "auth/login",
@@ -69,6 +69,7 @@ export const fetchUser = createAsyncThunk(
   "user",
   async (_, { getState, rejectWithValue }) => {
     try {
+      //@ts-ignore
       const token = (getState() as AppState).authReducer.authToken;
       const userResp: getUserResponse = await fetcher.get(`user`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -172,7 +173,7 @@ const internalInitialState = {
   nonce: "",
 };
 
-export const authSlice = createSlice({
+export const authSlice: any = createSlice({
   name: "auth",
   initialState: internalInitialState,
   reducers: {
@@ -282,14 +283,17 @@ export const authSlice = createSlice({
 });
 
 export const selectAuthLoading = (state: AppState) => {
+  //@ts-ignore
   return state.authReducer.loading;
 };
 
 export const selectIsAuthorized = (state: AppState) => {
+  //@ts-ignore
   return state.authReducer.isAuthorized;
 };
 
 export const selectUser = (state: AppState) => {
+  //@ts-ignore
   return state.authReducer.user;
 };
 

@@ -84,13 +84,27 @@ const GameIcon: React.FC = (): JSX.Element => {
   return (
     <div className="my-5 flex items-center justify-center relative">
       <div className='w-[75%] h-auto' >
-        <Image src={LobbyGameFrame} alt='frame' objectFit='contain' />
+        <Image
+          src={LobbyGameFrame}
+          alt='frame'
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            objectFit: "contain"
+          }} />
       </div>
       <div className='absolute w-[40%] h-auto' >
-        <Image src={LobbyGameIcon} alt='icon' objectFit='contain' />
+        <Image
+          src={LobbyGameIcon}
+          alt='icon'
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            objectFit: "contain"
+          }} />
       </div>
     </div>
-  )
+  );
 }
 
 export default CommonTab;
