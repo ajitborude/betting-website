@@ -2,8 +2,10 @@ import { useAppDispatch } from "@/hooks/common";
 import Frame from "@/public/login/frame.png";
 import {
   googleLogin,
+  login,
   metamaskLogin,
   metamaskVerify,
+  register,
 } from "@/redux/slices/auth";
 import { Transition } from "@headlessui/react";
 import { ethers } from "ethers";
@@ -48,8 +50,8 @@ const LoginPage: NextPage<PageProps> = (_props) => {
   const isLoginPage = router.query.isLogin === "true";
   const [isAccepted, setIsAccepted] = useState(false);
   const [showTncError, setShowTncError] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("sample.user@mailinator.cc");
+  const [password, setPassword] = useState("StrongPassword");
   const [isShowing, setShowing] = useState(false);
   // const [showCriteria, setShowCriteria] = useState(false);
 
@@ -78,13 +80,14 @@ const LoginPage: NextPage<PageProps> = (_props) => {
     }
 
     if (isLoginPage) {
-      // const body = {
-      //   email, password
-      // };
-      // const resp: any = await dispatch(login(body));
-      // if (resp.error) {
-      //   return toast.error(resp.payload.error);
-      // }
+      const body = {
+        email,
+        password,
+      };
+      const resp: any = await dispatch(login(body));
+      if (resp.error) {
+        return toast.error(resp.payload.error);
+      }
       return router.push("/");
     } else {
       if (!isAccepted) {
@@ -93,20 +96,21 @@ const LoginPage: NextPage<PageProps> = (_props) => {
       if (!passwordRegex.test(password)) {
         return toast.error(`Password should match the pattern`);
       }
-      // const body = {
-      //   email, password
-      // };
-      // const resp: any = await dispatch(register(body));
-      // if (resp.error) {
-      //   if (resp.error = 'Email Id Already Exists') {
-      //     toast.error("Hey you already have an account, Please login");
-      //     setTimeout(() => {
-      //       return router.push('/login?isLogin=true');
-      //     }, 2000);
-      //   } else {
-      //     return toast.error(resp.payload.error);
-      //   }
-      // }
+      const body = {
+        email,
+        password,
+      };
+      const resp: any = await dispatch(register(body));
+      if (resp.error) {
+        if ((resp.error = "Email Id Already Exists")) {
+          toast.error("Hey you already have an account, Please login");
+          setTimeout(() => {
+            return router.push("/login?isLogin=true");
+          }, 2000);
+        } else {
+          return toast.error(resp.payload.error);
+        }
+      }
       return router.push("/");
     }
   };
@@ -193,7 +197,8 @@ const LoginPage: NextPage<PageProps> = (_props) => {
                 priority={true}
                 placeholder="blur"
                 fill
-                sizes="100vw" />
+                sizes="100vw"
+              />
             </div>
             <div className="flex self-end mr-12">
               <label className={isLoginPage ? "login-title" : "signup-title"}>
@@ -201,6 +206,21 @@ const LoginPage: NextPage<PageProps> = (_props) => {
               </label>
             </div>
             <div className=" w-[75%] h-full flex items-center justify-between flex-col -ml-3 ">
+              {isLoginPage ? (
+                <span className="my-2 login-info">
+                  Enter any email & password to login
+                </span>
+              ) : (
+                <div className="flex flex-col items-center my-2">
+                  <span className="signup-info ">
+                    Enter any email & password to sign up.
+                  </span>
+                  <span className="signup-info ">
+                    We will not create any account
+                  </span>
+                </div>
+              )}
+
               <div className="w-full mt-5">
                 <TextInput
                   icon={{ name: "user", type: "default" }}
@@ -332,7 +352,7 @@ const LoginPage: NextPage<PageProps> = (_props) => {
                 </div>
               </Transition>
 
-              <Transition
+              {/* <Transition
                 show={isShowing}
                 as={Fragment}
                 appear={true}
@@ -375,7 +395,7 @@ const LoginPage: NextPage<PageProps> = (_props) => {
                     </div>
                   </div>
                 </div>
-              </Transition>
+              </Transition> */}
               {/* 
               <div className='absolute -bottom-1 right-1 flex items-center justify-end w-20 h-20 rotate-[4deg]'
                 onClick={() => { router.push('/'); }}>

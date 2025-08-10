@@ -61,7 +61,7 @@ const TopBar: React.FC<TopBarProps> = (): JSX.Element => {
           >
             <div className="flex flex-row items-center drawer-button w-10 h-10 ml-2]">
               <label
-                htmlFor="wager-drawer"
+                htmlFor="bi-drawer"
                 className="relative w-full p-0 btn btn-ghost"
               >
                 <HamMenuButton />
@@ -84,8 +84,9 @@ const TopBar: React.FC<TopBarProps> = (): JSX.Element => {
                     style={{
                       maxWidth: "100%",
                       height: "auto",
-                      objectFit: "contain"
-                    }} />
+                      objectFit: "contain",
+                    }}
+                  />
                 </div>
                 <div className="flex self-center">
                   <label className="connect-wallet-btn-label">

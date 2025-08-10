@@ -4,13 +4,11 @@ import {
   googleLoginParams,
   googleLoginResponse,
   loginParams,
-  loginResponse,
   metamaskLoginParams,
   metamaskLoginResponse,
   metamaskSignatureParams,
   metamaskSignatureResponse,
   registerParams,
-  registerResponse,
 } from "@/types/auth";
 import {
   createAsyncThunk,
@@ -25,16 +23,16 @@ export const login = createAsyncThunk(
   "auth/login",
   async (credentials: loginParams, thunkAPI) => {
     try {
-      const authResp: loginResponse = await fetcher.post(
-        `auth/login`,
-        credentials
-      );
-      const userResp: getUserResponse = await fetcher.get(`user`, {
-        headers: { Authorization: `Bearer ${authResp.authToken}` },
-      });
+      // const authResp: loginResponse = await fetcher.post(
+      //   `auth/login`,
+      //   credentials
+      // );
+      // const userResp: getUserResponse = await fetcher.get(`user`, {
+      //   headers: { Authorization: `Bearer ${authResp.authToken}` },
+      // });
       return {
-        authToken: authResp.authToken,
-        user: { name: userResp.name, email: userResp.email },
+        authToken: "sample-token",
+        user: { name: "Sample User", email: "sample.user@mailinator.cc" },
       };
     } catch (error: any) {
       return thunkAPI.rejectWithValue({
@@ -48,16 +46,16 @@ export const register = createAsyncThunk(
   "auth/register",
   async (credentials: registerParams, thunkAPI) => {
     try {
-      const authResp: registerResponse = await fetcher.post(
-        `auth/register`,
-        credentials
-      );
-      const userResp: getUserResponse = await fetcher.get(`user`, {
-        headers: { Authorization: `Bearer ${authResp.authToken}` },
-      });
+      // const authResp: registerResponse = await fetcher.post(
+      //   `auth/register`,
+      //   credentials
+      // );
+      // const userResp: getUserResponse = await fetcher.get(`user`, {
+      //   headers: { Authorization: `Bearer ${authResp.authToken}` },
+      // });
       return {
-        authToken: authResp.authToken,
-        user: { name: userResp.name, email: userResp.email },
+        authToken: "sample-token",
+        user: { name: "Sample User", email: "sample.user@mailinator.cc" },
       };
     } catch (error: any) {
       return thunkAPI.rejectWithValue({ error: error.message });

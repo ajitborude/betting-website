@@ -55,7 +55,7 @@ const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
           <meta property="og:title" content="Betting Inc." key="title" />
         </Head>
         <div className="bg-white drawer">
-          <input id="wager-drawer" type="checkbox" className="drawer-toggle" />
+          <input id="bi-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content overflow-hidden !transform-none">
             <AuthGuard>
               <>
@@ -71,20 +71,25 @@ const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
                 {getLayout(<Component {...pageProps} />)}
               </>
             </AuthGuard>
-            <div className="z-[999] absolute bottom-0 left-0 py-1 px-2 bg-slate-600 rounded-sm bg-opacity-50">
-              <label className="text-xs heading">
+            <div className="z-[999] absolute bottom-0 left-0 px-2 bg-slate-600 rounded-sm bg-opacity-50">
+              <label className="text-xs">
                 Version : {process.env.NEXT_PUBLIC_VERSION}
+              </label>
+            </div>
+            <div className="z-[999] absolute top-0 left-1/2 transform -translate-x-1/2 py-1 px-2 bg-slate-600 rounded-sm bg-opacity-75">
+              <label className="underline heading underline-offset-4">
+                Demo Website
               </label>
             </div>
           </div>
           <div className="-ml-2 drawer-side ">
             <label
-              htmlFor="wager-drawer"
+              htmlFor="bi-drawer"
               className="drawer-overlay mt-[70px] !opacity-80 !bg-opacity-100"
               aria-hidden="true"
             />
             <label
-              htmlFor="wager-drawer"
+              htmlFor="bi-drawer"
               className="!bg-transparent !h-[70px] drawer-overlay"
               aria-hidden="true"
             />

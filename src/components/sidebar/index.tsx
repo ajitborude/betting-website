@@ -1,9 +1,9 @@
-import React from 'react';
-import SecondaryButton from '../common/secondary-button';
+import React from "react";
+import SecondaryButton from "../common/secondary-button";
 // import Link from 'next/link';
 // import sidebarRoutes from './routes';
 import { useRouter } from "next/router";
-interface SideBarProps { }
+interface SideBarProps {}
 
 const SideBar: React.FC<SideBarProps> = (_props): JSX.Element => {
   const router = useRouter();
@@ -24,25 +24,52 @@ const SideBar: React.FC<SideBarProps> = (_props): JSX.Element => {
     //   }
     // </div>
     <div className="flex flex-col items-center justify-start p-0">
-      <div className='h-[55px] w-full drawer-button' >
-        <label htmlFor="wager-drawer" className="w-full p-0 btn btn-ghost hover:bg-transparent" />
+      <div className="h-[55px] w-full drawer-button">
+        <label
+          htmlFor="bi-drawer"
+          className="w-full p-0 btn btn-ghost hover:bg-transparent"
+        />
       </div>
-      <div className='flex flex-col items-center justify-start w-full p-4 drawer-frame'>
-
-        <SecondaryButton onClick={() => { router.push('/'); }} isDrawerBtn={true}>
-          <label className='drawer-label'>Home</label>
+      <div className="flex flex-col items-center justify-start w-full p-4 drawer-frame">
+        <SecondaryButton
+          onClick={() => {
+            router.push("/");
+          }}
+          isDrawerBtn={true}
+        >
+          <label className="drawer-label">Home</label>
         </SecondaryButton>
-        <SecondaryButton onClick={() => { router.push('/cashback?tab=0'); }} isDrawerBtn={true}>
-          <label className='drawer-label'>Cashback</label>
+        <SecondaryButton
+          onClick={() => {
+            router.push("/cashback?tab=0");
+          }}
+          isDrawerBtn={true}
+        >
+          <label className="drawer-label">Cashback</label>
         </SecondaryButton>
-        <SecondaryButton onClick={() => { router.push('/daily-tasks'); }} isDrawerBtn={true}>
-          <label className='drawer-label'>Daily Tasks</label>
+        <SecondaryButton
+          onClick={() => {
+            router.push("/daily-tasks");
+          }}
+          isDrawerBtn={true}
+        >
+          <label className="drawer-label">Daily Tasks</label>
         </SecondaryButton>
-        <SecondaryButton onClick={() => { router.push('/bonuses'); }} isDrawerBtn={true}>
-          <label className='drawer-label'>Bonuses</label>
+        <SecondaryButton
+          onClick={() => {
+            router.push("/bonuses");
+          }}
+          isDrawerBtn={true}
+        >
+          <label className="drawer-label">Bonuses</label>
         </SecondaryButton>
-        <SecondaryButton onClick={() => { router.push('/rank-system'); }} isDrawerBtn={true}>
-          <label className='drawer-label'>Rank System</label>
+        <SecondaryButton
+          onClick={() => {
+            router.push("/rank-system");
+          }}
+          isDrawerBtn={true}
+        >
+          <label className="drawer-label">Rank System</label>
         </SecondaryButton>
       </div>
       {/* <label className='py-2 text-sm text-white'>Version : {process.env.NEXT_PUBLIC_VERSION}</label> */}

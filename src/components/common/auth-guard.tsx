@@ -1,5 +1,5 @@
 import { useAppSelector } from "@/hooks/common";
-import { selectAuthLoading } from "@/redux/slices/auth";
+import { selectAuthLoading, selectIsAuthorized } from "@/redux/slices/auth";
 import { useRouter } from "next/router";
 import React from "react";
 import Loader from "./loader";
@@ -13,7 +13,7 @@ const unProtectedRoutes = ["/login", "/forgot-password", "/_error"];
 const AuthGuard: React.FC<Props> = ({ children }) => {
   const router = useRouter();
   const isLoading = useAppSelector(selectAuthLoading);
-  const isAuthorized = true; //useAppSelector(selectIsAuthorized);
+  const isAuthorized = useAppSelector(selectIsAuthorized);
 
   // useEffect(() => {
   //   if (!isAuthorized && !unProtectedRoutes.includes(router.pathname)) {

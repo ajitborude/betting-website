@@ -6,6 +6,21 @@
   /* font-size: 15px; */
 }
 
+.login-info {
+  font-family: "Days One", sans-serif;
+  color: white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.signup-info {
+  font-family: "Days One", sans-serif;
+  color: white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
 .login-title {
   animation: typing 0.8s steps(5, end) 1s 1 normal both;
   animation-delay: 0.3s;
