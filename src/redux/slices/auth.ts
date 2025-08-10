@@ -21,7 +21,7 @@ import { AppState } from "../store";
 
 export const login = createAsyncThunk(
   "auth/login",
-  async (credentials: loginParams, thunkAPI) => {
+  async (_credentials: loginParams, thunkAPI) => {
     try {
       // const authResp: loginResponse = await fetcher.post(
       //   `auth/login`,
@@ -44,7 +44,7 @@ export const login = createAsyncThunk(
 
 export const register = createAsyncThunk(
   "auth/register",
-  async (credentials: registerParams, thunkAPI) => {
+  async (_credentials: registerParams, thunkAPI) => {
     try {
       // const authResp: registerResponse = await fetcher.post(
       //   `auth/register`,

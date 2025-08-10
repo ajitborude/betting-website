@@ -1,14 +1,7 @@
 import { useAppDispatch } from "@/hooks/common";
 import Frame from "@/public/login/frame.png";
-import {
-  googleLogin,
-  login,
-  metamaskLogin,
-  metamaskVerify,
-  register,
-} from "@/redux/slices/auth";
+import { login, register } from "@/redux/slices/auth";
 import { Transition } from "@headlessui/react";
-import { ethers } from "ethers";
 import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -18,7 +11,6 @@ import { toast } from "react-toastify";
 import SimpleReactValidator from "simple-react-validator";
 // import PrimaryButton from "@/components/common/primary-button";
 // import SecondaryButton from "@/components/common/secondary-button";
-import { useGoogleLogin } from "@react-oauth/google";
 
 const TextInput = dynamic(() => import("@/components/common/text-input"), {
   loading: () => <div />,
@@ -27,10 +19,10 @@ const PrimaryButton = dynamic(
   () => import("@/components/common/primary-button"),
   { loading: () => <div /> }
 );
-const SecondaryButton = dynamic(
-  () => import("@/components/common/secondary-button"),
-  { loading: () => <div /> }
-);
+// const SecondaryButton = dynamic(
+//   () => import("@/components/common/secondary-button"),
+//   { loading: () => <div /> }
+// );
 
 // const passwordRegex = new RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,32}$/);
 const passwordRegex = new RegExp(/^(?=.*[a-z])(?=.*[A-Z]).{8,32}$/);
@@ -55,21 +47,21 @@ const LoginPage: NextPage<PageProps> = (_props) => {
   const [isShowing, setShowing] = useState(false);
   // const [showCriteria, setShowCriteria] = useState(false);
 
-  const handleGoogleLogin = useGoogleLogin({
-    onSuccess: async (codeResponse) => {
-      const resp: any = await dispatch(
-        googleLogin({ code: codeResponse.code })
-      );
-      if (resp.error) {
-        return toast.error(resp.payload.error);
-      }
-      return router.push("/");
-    },
-    onError: async (errorResponse) => {
-      return toast.error(errorResponse.error_description);
-    },
-    flow: "auth-code",
-  });
+  // const handleGoogleLogin = useGoogleLogin({
+  //   onSuccess: async (codeResponse) => {
+  //     const resp: any = await dispatch(
+  //       googleLogin({ code: codeResponse.code })
+  //     );
+  //     if (resp.error) {
+  //       return toast.error(resp.payload.error);
+  //     }
+  //     return router.push("/");
+  //   },
+  //   onError: async (errorResponse) => {
+  //     return toast.error(errorResponse.error_description);
+  //   },
+  //   flow: "auth-code",
+  // });
 
   const handleAuth = async (e?: any) => {
     if (e) e.preventDefault();
@@ -122,51 +114,51 @@ const LoginPage: NextPage<PageProps> = (_props) => {
   }, []);
 
   //@ts-ignore
-  const handleMetamask = async (e?: any) => {
-    if (e) e.preventDefault();
+  // const handleMetamask = async (e?: any) => {
+  //   if (e) e.preventDefault();
 
-    if (!isAccepted && !isLoginPage) {
-      return setShowTncError(true);
-    }
-    //@ts-ignore
-    if (window.ethereum && window.ethereum.isMetaMask) {
-      try {
-        //@ts-ignore
-        const accounts = await window.ethereum.request({
-          method: "eth_accounts",
-        });
-        //@ts-ignore
-        accounts.length === 0 &&
-          //@ts-ignore
-          (await window.ethereum.request({ method: "eth_requestAccounts" }));
-        //@ts-ignore
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const address = await signer.getAddress();
-        const response = await dispatch(metamaskLogin({ address }));
-        //@ts-ignore
-        const message = response.payload.nonce;
-        const signature = await signer.signMessage(message);
-        const signatureResponse = await dispatch(
-          metamaskVerify({ signature, address })
-        );
-        //@ts-ignore
-        if (!signatureResponse.error) {
-          router.push("/");
-        }
-      } catch (e: any) {
-        if (e.code === -32002) {
-          return;
-        } else if (e.code === 4001) {
-          return toast.error("User Declined The Metamask Request");
-        } else {
-          return toast.error("Something Went Wrong");
-        }
-      }
-    } else {
-      return toast.error("Metamask Extension Installation Required!");
-    }
-  };
+  //   if (!isAccepted && !isLoginPage) {
+  //     return setShowTncError(true);
+  //   }
+  //   //@ts-ignore
+  //   if (window.ethereum && window.ethereum.isMetaMask) {
+  //     try {
+  //       //@ts-ignore
+  //       const accounts = await window.ethereum.request({
+  //         method: "eth_accounts",
+  //       });
+  //       //@ts-ignore
+  //       accounts.length === 0 &&
+  //         //@ts-ignore
+  //         (await window.ethereum.request({ method: "eth_requestAccounts" }));
+  //       //@ts-ignore
+  //       const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //       const signer = provider.getSigner();
+  //       const address = await signer.getAddress();
+  //       const response = await dispatch(metamaskLogin({ address }));
+  //       //@ts-ignore
+  //       const message = response.payload.nonce;
+  //       const signature = await signer.signMessage(message);
+  //       const signatureResponse = await dispatch(
+  //         metamaskVerify({ signature, address })
+  //       );
+  //       //@ts-ignore
+  //       if (!signatureResponse.error) {
+  //         router.push("/");
+  //       }
+  //     } catch (e: any) {
+  //       if (e.code === -32002) {
+  //         return;
+  //       } else if (e.code === 4001) {
+  //         return toast.error("User Declined The Metamask Request");
+  //       } else {
+  //         return toast.error("Something Went Wrong");
+  //       }
+  //     }
+  //   } else {
+  //     return toast.error("Metamask Extension Installation Required!");
+  //   }
+  // };
 
   return (
     <div className="relative flex items-center justify-center w-full h-screen">
